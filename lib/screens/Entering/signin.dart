@@ -146,7 +146,7 @@ class _singnupState extends State<signin> {
                 ),
               ),
               SizedBox(height: 20.h),
-             button(text: "Login", destination: "")
+             button(text: "Login", destination: "navigator")
             ],
           ),
         ),

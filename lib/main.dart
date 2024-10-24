@@ -12,6 +12,8 @@ import 'package:food_app/screens/Entering/signup_process5.dart';
 import 'package:food_app/screens/Entering/signup_success.dart';
 import 'package:food_app/screens/Entering/update_password.dart';
 import 'package:food_app/screens/Entering/verification_code.dart';
+import 'package:food_app/screens/home/Home.dart';
+import 'package:food_app/screens/navigator.dart';
 import 'package:food_app/screens/stratest/StartPage.dart';
 import 'package:food_app/screens/stratest/onboarding2.dart';
 import 'package:food_app/screens/stratest/onboarding3.dart';
@@ -46,6 +48,8 @@ class MyApp extends StatelessWidget {
           'verification_code': (context) => verification_code(),
           'update_password': (context) => update_password(),
           'reset_succesful' : (context) => reset_succesful(),
+          'navigator' : (context) => navigator(),
+          'home' : (context) => Home(),
         },
       ),
     );

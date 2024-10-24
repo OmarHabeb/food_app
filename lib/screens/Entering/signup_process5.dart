@@ -15,11 +15,11 @@ class _signup_process5State extends State<signup_process5> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
-          width: MediaQuery.of(context).size.width,
-          padding: EdgeInsets.all(15.w),
+          width: double.infinity,
+          padding: EdgeInsets.all(15.r),
           decoration: BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage("assets/Pattern2.png"), fit: BoxFit.cover)),
+                  image: AssetImage("assets/Pattern2.png"), fit: BoxFit.fill)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

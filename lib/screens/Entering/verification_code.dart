@@ -87,7 +87,8 @@ class _verification_codeState extends State<verification_code> {
                     Navigator.pushNamed(context, "update_password");
                   } else {
                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                      content: Text("ya am a7a"),
+                      content: Text("Please Enter 4 digit code"),
+
                       duration: Duration(seconds: 3),
                     ));
                   }
