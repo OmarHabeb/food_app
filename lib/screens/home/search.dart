@@ -315,6 +315,3 @@ class _SearchState extends State<Search> {
     )));
   }
 }
-// Center(
-//         child:  
-//       ),

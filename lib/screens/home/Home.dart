@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/screens/home/Restaurant.dart';
+import 'package:food_app/screens/home/menu.dart';
 import 'package:food_app/screens/home/search.dart';
 import 'package:food_app/screens/navigator.dart';
 
@@ -56,10 +58,7 @@ class _HomeState extends State<Home> {
                             flex: 6,
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => Search()));
+                                Navigator.pushNamed(context, "search");
                               },
                               child: Container(
                                 padding: EdgeInsets.all(10),
@@ -162,7 +161,12 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.bold, fontSize: 15.sp),
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Restaurant()));
+                            },
                             child: Text(
                               "View More ",
                               style: TextStyle(
@@ -255,7 +259,12 @@ class _HomeState extends State<Home> {
                               fontWeight: FontWeight.bold, fontSize: 15.sp),
                         ),
                         TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Menu()));
+                            },
                             child: Text(
                               "View More ",
                               style: TextStyle(

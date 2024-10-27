@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 
-class Card extends StatefulWidget {
-  const Card({super.key});
+class card extends StatefulWidget {
+  const card({super.key});
 
   @override
-  State<Card> createState() => _CardState();
+  State<card> createState() => _cardState();
 }
 
-class _CardState extends State<Card> {
+class _cardState extends State<card> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return   Scaffold(
       body: Center(
         child: Text("card"),
       ),
