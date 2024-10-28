@@ -12,6 +12,7 @@ import 'package:food_app/screens/Entering/signup_process5.dart';
 import 'package:food_app/screens/Entering/signup_success.dart';
 import 'package:food_app/screens/Entering/update_password.dart';
 import 'package:food_app/screens/Entering/verification_code.dart';
+import 'package:food_app/screens/home/Finishorder.dart';
 import 'package:food_app/screens/home/Home.dart';
 import 'package:food_app/screens/home/Restaurant.dart';
 import 'package:food_app/screens/home/search.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
           'home': (context) => Home(),
           'search': (context) => Search(),
           'Restaurant': (context) => Restaurant(),
+          // 'Finishorder': (context) => Finishorder(image: "assets/Profile1.dart",),
         },
       ),
     );

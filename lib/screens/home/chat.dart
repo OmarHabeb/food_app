@@ -24,7 +24,8 @@ class _ChatState extends State<Chat> {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return Scaffold(
+    body:  SingleChildScrollView(
         child: Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.only(top: 50, right: 20, left: 20),
@@ -62,8 +63,14 @@ class _ChatState extends State<Chat> {
                   itemCount: profileimage.length,
                   itemBuilder: (context, index) {
                     return InkWell(
-                      onTap:(){
-                         Navigator.push(context , MaterialPageRoute(builder: (context)=> ChatDetails()));
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => ChatDetails(
+                                      image: profileimage[index],
+                                      name: profilename[index],
+                                    )));
                       },
                       child: Container(
                         margin: EdgeInsets.only(bottom: 15),
@@ -84,7 +91,8 @@ class _ChatState extends State<Chat> {
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10.r),
                                       image: DecorationImage(
-                                          image: AssetImage(profileimage[index]),
+                                          image:
+                                              AssetImage(profileimage[index]),
                                           fit: BoxFit.cover)),
                                 ),
                                 SizedBox(
@@ -119,6 +127,6 @@ class _ChatState extends State<Chat> {
                       ),
                     );
                   })
-            ])));
+            ]))));
   }
 }
