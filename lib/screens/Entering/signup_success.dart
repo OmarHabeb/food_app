@@ -52,7 +52,7 @@ class _signup_successState extends State<signup_success> {
               height: 200.h,
             ),
                Center(
-                child: button(text: "Try Order", destination: "")
+                child: button(text: "Try Order", destination: "navigator")
               )
           ],
         ),

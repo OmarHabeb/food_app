@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           'signup_process': (context) => signup_process(),
           'signup_process2': (context) => signup_process2(),
           'signup_process3': (context) => signup_process3(),
-          'signup_process4': (context) => signup_process4(),
+          // 'signup_process4': (context) => signup_process4(),
           'signup_process5': (context) => signup_process5(),
           'signup_success': (context) => signup_success(),
           'forget_password': (context) => forget_password(),

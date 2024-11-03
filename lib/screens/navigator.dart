@@ -14,6 +14,7 @@ class navigator extends StatefulWidget {
 }
 
 class _navigatorState extends State<navigator> {
+  
   List<Widget> screens = [
    Home(),
    Profile(),
@@ -72,10 +73,10 @@ class _navigatorState extends State<navigator> {
               )
             ]),
       ),
-      body: IndexedStack(
-        index:currentIndex,
-        children: screens,
-      ),
+      body:Center(
+        
+        child: screens.elementAt(currentIndex),
+      )
     );
   }
 }

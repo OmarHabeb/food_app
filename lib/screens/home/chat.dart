@@ -28,13 +28,15 @@ class _ChatState extends State<Chat> {
     body:  SingleChildScrollView(
         child: Container(
             width: MediaQuery.of(context).size.width,
+             height: MediaQuery.of(context).size.height,
             padding: EdgeInsets.only(top: 50, right: 20, left: 20),
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage("assets/Pattern2.png"),
                     fit: BoxFit.cover)),
             child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start, children: [
               InkWell(
                 onTap: () {
                   Navigator.pop(context);

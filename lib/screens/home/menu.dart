@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/data.dart';
 import 'package:food_app/screens/home/search.dart';
 
 class Menu extends StatefulWidget {
@@ -10,27 +11,6 @@ class Menu extends StatefulWidget {
 }
 
 class _MenuState extends State<Menu> {
-  List<String> menuimage = [
-    "assets/herbal.jpeg",
-    "assets/Fruit Salad.png",
-    "assets/Green noddle.png",
-  ];
-  List<String> menutext = [
-    "Herbal Pancake",
-    "Fruit Salad",
-    "Green noddle",
-  ];
-  List<String> menusubtext = [
-    "Warung Herbal",
-    "Wijie Resto",
-    "Noodle Home",
-  ];
-  List<String> menuprice = [
-    "\$7",
-    "\$5",
-    "\$15",
-  ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,61 +117,68 @@ class _MenuState extends State<Menu> {
                       ListView.builder(
                           shrinkWrap: true,
                           physics: ScrollPhysics(),
-                          itemCount: menuimage.length,
+                          itemCount: menu.length,
                           itemBuilder: (context, index) {
-                            return Container(
-                              margin: EdgeInsets.only(bottom: 15),
-                              padding: EdgeInsets.all(15.r),
-                              height: 87.h,
-                              width: MediaQuery.of(context).size.width,
-                              decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(22.r)),
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Row(
-                                    children: [
-                                      Container(
-                                        width: 64.w,
-                                        height: 64.h,
-                                        decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(10.r),
-                                            image: DecorationImage(
-                                                image: AssetImage(
-                                                    menuimage[index]),
-                                                fit: BoxFit.cover)),
-                                      ),
-                                      SizedBox(
-                                        width: 15.w,
-                                      ),
-                                      Column(
-                                        children: [
-                                          Text(
-                                            menutext[index],
-                                            style: TextStyle(
-                                                fontSize: 15.sp,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          Text(
-                                           menusubtext[index],
-                                            style: TextStyle(
-                                                fontSize: 15.sp,
-                                                color: Colors.grey,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                        ],
-                                      ),
-                                    ],
-                                  ),
-                                  Text(
-                                    menuprice[index],
-                                    style: TextStyle(
-                                        color: Color.fromRGBO(254, 173, 29, 1)),
-                                  )
-                                ],
+                            return InkWell(
+                              onTap: () {
+                                items.add(menu[index]);
+                              
+                              },
+                              child: Container(
+                                margin: EdgeInsets.only(bottom: 15),
+                                padding: EdgeInsets.all(15.r),
+                                height: 87.h,
+                                width: MediaQuery.of(context).size.width,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(22.r)),
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Container(
+                                          width: 64.w,
+                                          height: 64.h,
+                                          decoration: BoxDecoration(
+                                              borderRadius:
+                                                  BorderRadius.circular(10.r),
+                                              image: DecorationImage(
+                                                  image: AssetImage(
+                                                      menu[index]["image"]),
+                                                  fit: BoxFit.cover)),
+                                        ),
+                                        SizedBox(
+                                          width: 15.w,
+                                        ),
+                                        Column(
+                                          children: [
+                                            Text(
+                                              menu[index]["text"],
+                                              style: TextStyle(
+                                                  fontSize: 15.sp,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            Text(
+                                              menu[index]["subtext"],
+                                              style: TextStyle(
+                                                  fontSize: 15.sp,
+                                                  color: Colors.grey,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ],
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "\$ ${menu[index]["price"]}",
+                                      style: TextStyle(
+                                          color:
+                                              Color.fromRGBO(254, 173, 29, 1)),
+                                    )
+                                  ],
+                                ),
                               ),
                             );
                           })

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:food_app/wiget/button.dart';
+import 'package:food_app/screens/Entering/signup_process4.dart';
+
+import 'package:image_picker/image_picker.dart';
 
 class signup_process3 extends StatefulWidget {
   const signup_process3({super.key});
@@ -10,6 +12,7 @@ class signup_process3 extends StatefulWidget {
 }
 
 class _signup_process3State extends State<signup_process3> {
+   XFile? image;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +56,10 @@ class _signup_process3State extends State<signup_process3> {
                 height: 15.h,
               ),
               InkWell(
+                onTap: () async {
+                  image = (await ImagePicker()
+                      .pickImage(source: ImageSource.gallery))!;
+                },
                 child: Container(
                   width: 325.w,
                   height: 129.h,
@@ -66,6 +73,10 @@ class _signup_process3State extends State<signup_process3> {
                 height: 15.h,
               ),
               InkWell(
+                onTap: () async {
+                  image =
+                      (await ImagePicker().pickImage(source: ImageSource.camera));
+                },
                 child: Container(
                     width: 325.w,
                     height: 129.h,
@@ -80,7 +91,44 @@ class _signup_process3State extends State<signup_process3> {
                 height: 250.h,
               ),
               Center(
-                child: button(text: "Next", destination: "signup_process4")
+                child: Container(
+                  width: 157.w,
+                  height: 57.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15.w),
+                    gradient: LinearGradient(
+                      begin: Alignment.topLeft,
+                      end: Alignment.bottomRight,
+                      colors: [
+                        Color.fromRGBO(83, 232, 139, 1), // Light green
+                        Color.fromRGBO(21, 190, 119, 1), // Darker green
+                      ],
+                    ),
+                  ),
+                  child: Center(
+                      child: TextButton(
+                    onPressed: () {
+                      image == null
+                          ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("Please choose your pic"),
+                              duration: Duration(seconds: 3),
+                            ))
+                          : Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => signup_process4(
+                                        image: image!,
+                                      )));
+                    },
+                    child: Text(
+                      "Next",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp),
+                    ),
+                  )),
+                ),
               )
             ],
           ),

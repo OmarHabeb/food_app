@@ -1,9 +1,14 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/wiget/button.dart';
+import 'package:image_picker/image_picker.dart';
 
 class signup_process4 extends StatefulWidget {
-  const signup_process4({super.key});
+  XFile? image;
+
+  signup_process4({required this.image});
 
   @override
   State<signup_process4> createState() => _signup_process4State();
@@ -12,6 +17,7 @@ class signup_process4 extends StatefulWidget {
 class _signup_process4State extends State<signup_process4> {
   @override
   Widget build(BuildContext context) {
+    File n;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -55,20 +61,26 @@ class _signup_process4State extends State<signup_process4> {
               Center(
                 child: Stack(
                   children: [
-                    Container(
-                      width: 245.w,
-                      height: 238.h,
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(15.w),
-                          image: DecorationImage(
-                              image: AssetImage("assets/me.jpg"),
-                              fit: BoxFit.cover)),
-                    ),
+                    widget.image == null
+                        ? Text("no baby")
+                        : Container(
+                            width: 245.w,
+                            height: 238.h,
+                            decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(15.w),
+                                image: DecorationImage(
+                                    image: FileImage(File(widget.image!.path)),
+                                    fit: BoxFit.cover)),
+                          ),
                     Positioned(
                         right: 0,
                         child: IconButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              setState(() {
+                                widget.image = null;
+                              });
+                            },
                             icon: Icon(
                               Icons.close,
                               color: Colors.white,
@@ -83,8 +95,13 @@ class _signup_process4State extends State<signup_process4> {
                 height: 250.h,
               ),
               Center(
-                child: button(text: "Next", destination: "signup_process5")
-              )
+                  child: widget.image == null
+                      ? TextButton(
+                          onPressed: () {
+                            Navigator.pop(context);
+                          },
+                          child: Text("Back"  ,style: TextStyle(color: Colors.greenAccent ,fontSize: 20),))
+                      : button(text: "Next", destination: "signup_process5"))
             ],
           ),
         ),
