@@ -41,4 +41,4 @@ List<Map> menu = [
   },
 ];
 var allprice = 0;
-Set<Map> items = {};
+List<Map> card_items = [];

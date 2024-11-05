@@ -7,7 +7,7 @@ import 'package:food_app/screens/home/profile.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
 class navigator extends StatefulWidget {
-  const navigator({super.key});
+   navigator({super.key});
 
   @override
   State<navigator> createState() => _navigatorState();

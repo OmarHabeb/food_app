@@ -39,7 +39,7 @@ class _ChatState extends State<Chat> {
                   crossAxisAlignment: CrossAxisAlignment.start, children: [
               InkWell(
                 onTap: () {
-                  Navigator.pop(context);
+                     Navigator.pop(context, MaterialPageRoute(builder: (context)=>navigator()));
                 },
                 child: Container(
                   width: 45.w,

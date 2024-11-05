@@ -31,10 +31,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
       child: MaterialApp(
         title: 'Food_app',
         debugShowCheckedModeBanner: false,
-        initialRoute: 'onboarding1',
+        initialRoute: 'navigator',
         routes: {
           'onboarding1': (context) => onboarding1(),
           'onboarding2': (context) => onboarding2(),

@@ -121,8 +121,17 @@ class _MenuState extends State<Menu> {
                           itemBuilder: (context, index) {
                             return InkWell(
                               onTap: () {
-                                items.add(menu[index]);
-                              
+                                if (card_items.contains(menu[index])) {
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(SnackBar(
+                                    content: Text(
+                                        "this item  is already in your cart"),
+                                    duration: Duration(seconds: 3),
+                                  ));
+                                } else {
+                                  card_items.add(menu[index]);
+                                  
+                                }
                               },
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 15),
