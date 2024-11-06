@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/screens/home/Detailproduct.dart';
 import 'package:food_app/screens/home/Restaurant.dart';
 import 'package:food_app/screens/home/menu.dart';
 import 'package:food_app/screens/home/notification.dart';
@@ -44,9 +45,9 @@ class _HomeState extends State<Home> {
                           child: IconButton(
                               onPressed: () {
                                 Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => notification()));
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => notification()));
                               },
                               icon: Icon(
                                 Icons.notifications_none_outlined,
@@ -184,72 +185,91 @@ class _HomeState extends State<Home> {
                     Row(
                       children: [
                         Expanded(
-                            child: Container(
-                          height: 184.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(22.r),
-                              color: Colors.white),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height: 73.h,
-                                  width: 96.w,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image: AssetImage("assets/vegan.png"),
-                                          fit: BoxFit.cover)),
-                                ),
-                                Text(
-                                  "Vegan Resto",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17.sp),
-                                ),
-                                Text(
-                                  "12 Mins",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 13.sp,
-                                      color: Colors.grey),
-                                )
-                              ]),
+                            child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Detailproduct()));
+                          },
+                          child: Container(
+                            height: 184.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22.r),
+                                color: Colors.white),
+                            child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    height: 73.h,
+                                    width: 96.w,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image:
+                                                AssetImage("assets/vegan.png"),
+                                            fit: BoxFit.cover)),
+                                  ),
+                                  Text(
+                                    "Vegan Resto",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17.sp),
+                                  ),
+                                  Text(
+                                    "12 Mins",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13.sp,
+                                        color: Colors.grey),
+                                  )
+                                ]),
+                          ),
                         )),
                         SizedBox(
                           width: 15.w,
                         ),
                         Expanded(
-                            child: Container(
-                          height: 184.h,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(22.r),
-                              color: Colors.white),
-                          child: Column(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  height: 73.h,
-                                  width: 96.w,
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                          image:
-                                              AssetImage("assets/healthy.png"),
-                                          fit: BoxFit.cover)),
-                                ),
-                                Text(
-                                  "Healthy Food",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 17.sp),
-                                ),
-                                Text(
-                                  "8 Mins",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 13.sp,
-                                      color: Colors.grey),
-                                )
-                              ]),
+                            child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => Detailproduct()));
+                          },
+                          child: Container(
+                            height: 184.h,
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(22.r),
+                                color: Colors.white),
+                            child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    height: 73.h,
+                                    width: 96.w,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                            image: AssetImage(
+                                                "assets/healthy.png"),
+                                            fit: BoxFit.cover)),
+                                  ),
+                                  Text(
+                                    "Healthy Food",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 17.sp),
+                                  ),
+                                  Text(
+                                    "8 Mins",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        fontSize: 13.sp,
+                                        color: Colors.grey),
+                                  )
+                                ]),
+                          ),
                         )),
                       ],
                     ),

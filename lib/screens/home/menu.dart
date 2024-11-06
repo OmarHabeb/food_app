@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/data.dart';
+import 'package:food_app/screens/home/food.dart';
 import 'package:food_app/screens/home/search.dart';
 
 class Menu extends StatefulWidget {
@@ -120,7 +121,7 @@ class _MenuState extends State<Menu> {
                           itemCount: menu.length,
                           itemBuilder: (context, index) {
                             return InkWell(
-                              onTap: () {
+                              onLongPress: () {
                                 if (card_items.contains(menu[index])) {
                                   ScaffoldMessenger.of(context)
                                       .showSnackBar(SnackBar(
@@ -130,8 +131,13 @@ class _MenuState extends State<Menu> {
                                   ));
                                 } else {
                                   card_items.add(menu[index]);
-                                  
                                 }
+                              },
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Food()));
                               },
                               child: Container(
                                 margin: EdgeInsets.only(bottom: 15),

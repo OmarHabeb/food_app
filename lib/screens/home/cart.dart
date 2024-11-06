@@ -5,14 +5,14 @@ import 'package:food_app/main.dart';
 import 'package:food_app/screens/home/payment.dart';
 import 'package:food_app/screens/navigator.dart';
 
-class card extends StatefulWidget {
-  const card({super.key});
+class cart extends StatefulWidget {
+  const cart({super.key});
 
   @override
-  State<card> createState() => _cardState();
+  State<cart> createState() => _cartState();
 }
 
-class _cardState extends State<card> {
+class _cartState extends State<cart> {
   int num1 = 0;
   int num2 = 0;
   int num3 = 0;
@@ -125,9 +125,7 @@ class _cardState extends State<card> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 InkWell(
-                  onTap: () {
-                    Navigator.pop(context, MaterialPageRoute(builder: (context)=>navigator()));
-                  },
+                  onTap: () {},
                   child: Container(
                     width: 45.w,
                     height: 45.h,

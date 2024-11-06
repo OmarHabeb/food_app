@@ -17,7 +17,6 @@ class signup_process4 extends StatefulWidget {
 class _signup_process4State extends State<signup_process4> {
   @override
   Widget build(BuildContext context) {
-    File n;
     return Scaffold(
       body: SingleChildScrollView(
         child: Container(
@@ -100,7 +99,11 @@ class _signup_process4State extends State<signup_process4> {
                           onPressed: () {
                             Navigator.pop(context);
                           },
-                          child: Text("Back"  ,style: TextStyle(color: Colors.greenAccent ,fontSize: 20),))
+                          child: Text(
+                            "Back",
+                            style: TextStyle(
+                                color: Colors.greenAccent, fontSize: 20),
+                          ))
                       : button(text: "Next", destination: "signup_process5"))
             ],
           ),

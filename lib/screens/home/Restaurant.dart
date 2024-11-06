@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/screens/home/notification.dart';
 import 'package:food_app/screens/home/search.dart';
 import 'package:food_app/screens/navigator.dart';
 
@@ -56,7 +57,13 @@ class _RestaurantState extends State<Restaurant> {
                                 borderRadius: BorderRadius.circular(15),
                                 color: Colors.white),
                             child: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              notification()));
+                                },
                                 icon: Icon(
                                   Icons.notifications_none_outlined,
                                   color: Colors.greenAccent,

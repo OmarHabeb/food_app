@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/screens/home/Editlocation.dart';
 import 'package:food_app/screens/home/Editpayment.dart';
+import 'package:food_app/screens/home/orders.dart';
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -85,7 +87,7 @@ class _PaymentState extends State<Payment> {
               InkWell(
                 onTap: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Payment()));
+                      MaterialPageRoute(builder: (context) => YourOrders()));
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -157,11 +159,18 @@ class _PaymentState extends State<Payment> {
                             style:
                                 TextStyle(color: Colors.grey, fontSize: 14.sp),
                           ),
-                          Text(
-                            "Edit",
-                            style: TextStyle(
-                                color: Colors.greenAccent, fontSize: 14.sp),
-                          )
+                          TextButton(
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Editlocation()));
+                              },
+                              child: Text(
+                                "Edit",
+                                style: TextStyle(
+                                    color: Colors.greenAccent, fontSize: 14.sp),
+                              ))
                         ],
                       ),
                       SizedBox(
@@ -224,7 +233,6 @@ class _PaymentState extends State<Payment> {
                               ))
                         ],
                       ),
-                     
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
