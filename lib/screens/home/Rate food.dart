@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:food_app/screens/home/Rate%20Restaurant.dart';
-import 'package:food_app/screens/navigator.dart';
+
 
 class Rate_food extends StatefulWidget {
   const Rate_food({super.key});

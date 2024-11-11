@@ -49,7 +49,7 @@ class _CallState extends State<Call> {
 
   @override
   void dispose() {
-     timer?.cancel();  
+    timer?.cancel();
     super.dispose();
   }
 
@@ -84,7 +84,7 @@ class _CallState extends State<Call> {
                       height: 161.h,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(160),
-                          border: Border.all(color: Colors.green ,width: 5 ),
+                          border: Border.all(color: Colors.green, width: 5),
                           image: DecorationImage(
                               image: AssetImage(widget.image),
                               fit: BoxFit.cover)),
@@ -146,7 +146,13 @@ class _CallState extends State<Call> {
                         SizedBox(width: 30),
                         InkWell(
                             onTap: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context) => Finishorder(image: widget.image,),));
+                              Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => Finishorder(
+                                      image: widget.image,
+                                    ),
+                                  ));
                             },
                             child: Container(
                               width: 60,
@@ -154,7 +160,11 @@ class _CallState extends State<Call> {
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(40),
                                   color: Colors.redAccent),
-                              child: Center(child: Icon(Icons.close,color: Colors.white,)),
+                              child: Center(
+                                  child: Icon(
+                                Icons.close,
+                                color: Colors.white,
+                              )),
                             )),
                       ],
                     )

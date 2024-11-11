@@ -143,9 +143,9 @@ class _PaymentState extends State<Payment> {
                   height: 10.h,
                 ),
                 Container(
-                  padding: EdgeInsets.all(15.r),
+                  padding: EdgeInsets.all(10.r),
                   width: MediaQuery.of(context).size.width,
-                  height: 108.h,
+                  height: 120.h,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(22.r),
                       color: Colors.white),
@@ -173,9 +173,7 @@ class _PaymentState extends State<Payment> {
                               ))
                         ],
                       ),
-                      SizedBox(
-                        height: 10.h,
-                      ),
+                    
                       Row(
                         children: [
                           Container(
@@ -192,7 +190,7 @@ class _PaymentState extends State<Payment> {
                           Text(
                             "4517 Washington Ave. Manchester,\nKentucky 39495",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 15.sp),
+                                fontWeight: FontWeight.bold, ),
                           )
                         ],
                       )

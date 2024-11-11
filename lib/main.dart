@@ -7,12 +7,10 @@ import 'package:food_app/screens/Entering/signup.dart';
 import 'package:food_app/screens/Entering/signup_process.dart';
 import 'package:food_app/screens/Entering/signup_process2.dart';
 import 'package:food_app/screens/Entering/signup_process3.dart';
-import 'package:food_app/screens/Entering/signup_process4.dart';
 import 'package:food_app/screens/Entering/signup_process5.dart';
 import 'package:food_app/screens/Entering/signup_success.dart';
 import 'package:food_app/screens/Entering/update_password.dart';
 import 'package:food_app/screens/Entering/verification_code.dart';
-import 'package:food_app/screens/home/Finishorder.dart';
 import 'package:food_app/screens/home/Home.dart';
 import 'package:food_app/screens/home/Restaurant.dart';
 import 'package:food_app/screens/home/search.dart';
@@ -36,7 +34,7 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Food_app',
         debugShowCheckedModeBanner: false,
-        initialRoute: 'navigator',
+        initialRoute: 'onboarding1',
         routes: {
           'onboarding1': (context) => onboarding1(),
           'onboarding2': (context) => onboarding2(),
@@ -46,7 +44,6 @@ class MyApp extends StatelessWidget {
           'signup_process': (context) => signup_process(),
           'signup_process2': (context) => signup_process2(),
           'signup_process3': (context) => signup_process3(),
-          // 'signup_process4': (context) => signup_process4(),
           'signup_process5': (context) => signup_process5(),
           'signup_success': (context) => signup_success(),
           'forget_password': (context) => forget_password(),
@@ -57,7 +54,6 @@ class MyApp extends StatelessWidget {
           'home': (context) => Home(),
           'search': (context) => Search(),
           'Restaurant': (context) => Restaurant(),
-          // 'Finishorder': (context) => Finishorder(image: "assets/Profile1.dart",),
         },
       ),
     );

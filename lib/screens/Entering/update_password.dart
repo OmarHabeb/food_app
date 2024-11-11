@@ -9,6 +9,8 @@ class update_password extends StatefulWidget {
 }
 
 class _update_passwordState extends State<update_password> {
+  TextEditingController controller1 = TextEditingController();
+  TextEditingController controller2 = TextEditingController();
   bool index = true;
   bool index2 = true;
   @override
@@ -54,6 +56,7 @@ class _update_passwordState extends State<update_password> {
                 height: 15.h,
               ),
               TextField(
+                controller: controller1,
                 obscureText: index,
                 decoration: InputDecoration(
                   hintText: "New Password",
@@ -85,6 +88,7 @@ class _update_passwordState extends State<update_password> {
                 height: 20.h,
               ),
               TextField(
+                controller: controller2,
                 obscureText: index2,
                 decoration: InputDecoration(
                   hintText: "Confirm Password",
@@ -121,10 +125,17 @@ class _update_passwordState extends State<update_password> {
               Center(
                 child: InkWell(
                   onTap: () {
-                    Navigator.of(context).pushNamedAndRemoveUntil(
-                      'reset_succesful',
-                      (Route<dynamic> route) => false,
-                    );
+                    if (controller1.text == controller2.text) {
+                      Navigator.of(context).pushNamedAndRemoveUntil(
+                        'reset_succesful',
+                        (Route<dynamic> route) => false,
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("please enter the same password"),
+                        duration: Duration(seconds: 3),
+                      ));
+                    }
                   },
                   child: Container(
                     width: 157.w,

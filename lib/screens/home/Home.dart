@@ -19,6 +19,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SingleChildScrollView(
+          
             child: Container(
                 width: MediaQuery.of(context).size.width,
                 padding: EdgeInsets.only(top: 50, right: 20, left: 20),

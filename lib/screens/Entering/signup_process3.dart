@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/data.dart';
 import 'package:food_app/screens/Entering/signup_process4.dart';
 
 import 'package:image_picker/image_picker.dart';
@@ -12,7 +13,7 @@ class signup_process3 extends StatefulWidget {
 }
 
 class _signup_process3State extends State<signup_process3> {
-   XFile? image;
+   
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 List<String> menuimage = [
   "assets/herbal.jpeg",
@@ -42,3 +43,4 @@ List<Map> menu = [
 ];
 var allprice = 0;
 List<Map> card_items = [];
+XFile? image;

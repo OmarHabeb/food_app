@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:food_app/screens/Entering/verification_code.dart';
 import 'package:food_app/wiget/button.dart';
 
 class forget_password extends StatefulWidget {
@@ -198,7 +199,45 @@ class _forget_passwordState extends State<forget_password> {
                 height: 250.h,
               ),
               Center(
-                  child: button(text: "Next", destination: "verification_code"))
+                child: InkWell(
+                  onTap: () {
+                    if (selected == true || selected2 == true) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => verification_code()));
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        content: Text("choose to recive your code"),
+                        duration: Duration(seconds: 3),
+                      ));
+                    }
+                  },
+                  child: Container(
+                    width: 157.w,
+                    height: 57.h,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15.w),
+                      gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.bottomRight,
+                        colors: [
+                          Color.fromRGBO(83, 232, 139, 1), // Light green
+                          Color.fromRGBO(21, 190, 119, 1), // Darker green
+                        ],
+                      ),
+                    ),
+                    child: Center(
+                        child: Text(
+                      "Next",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16.sp),
+                    )),
+                  ),
+                ),
+              )
             ],
           ),
         ),
